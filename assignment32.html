@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Assignment-3.2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class Restaurant_Manager {
+            RestaurantList = [{
+                id: 1,
+                order: "Below 500",
+                orderpercentage: "10.05",
+                restaurant: "SREE RAM"
+            }, {
+                id: 2,
+                order: "500-1000",
+                orderpercentage: "14.57",
+                restaurant: "SREE RAM"
+            }, {
+                id: 3,
+                order: "1000-1500",
+                orderpercentage: "15.08",
+                restaurant: "SREE RAM"
+            }, {
+                id: 4,
+                order: "1500-2000",
+                orderpercentage: "22.11",
+                restaurant: "SREE RAM"
+            }, {
+                id: 5,
+                order: "Above 2000",
+                orderpercentage: "38.19",
+                restaurant: "SREE RAM"
+            }];
+        }
+        var orderData = {
+            'Below 500': 20,
+            '500-1000': 29,
+            '1000-1500': 30,
+            '1500-2000': 44,
+            'Above 2000': 76
+        };
+        var OrderValues = Object.values(orderData);
+        var sum = 0;
+        for (let i = 0; i < OrderValues.length; i++) {
+            sum = sum + OrderValues[i]
+        }
+        console.log("Total number of the orders placed for the restaurant:" + sum);
+        var OrderProportions = Object.keys(orderData);
+        console.log("Number of order proportion options:" + OrderProportions.length);
+
+        var resultArray = [];
+        for (let i = 0; i < OrderProportions.length; i++) {
+            var orderProportion = OrderProportions[i];
+            var ordersForTheProportion = orderData[orderProportion];
+            let orderPercentage = (ordersForTheProportion / sum) * 100;
+            const obj = {
+                'id': i + 1,
+                'order': orderProportion,
+                'orderpercentage': orderPercentage,
+                'restaurant': "SREE RAM"
+            }
+            console.log("Percentage of each proportion:" + orderPercentage);
+            resultArray.push();
+        }
+    </script>
+</body>
+</html>
+
+

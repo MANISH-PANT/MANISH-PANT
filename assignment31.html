@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Assignment-3.1</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class Restaurant_Manager {
+            restaurantList = [{
+                name: "SHREE RAM",
+                Address: "Near ST PIUS SCHOOL",
+                City: "Mumbai"
+            }, {
+                name: "The Food Studio",
+                Address: " NEAR CHECKNAKA",
+                City: " PUNE"
+
+            }, {
+                name: "Mansion Bar & Lounge",
+                Address: "Near Film City",
+                City: "Hyderabad"
+            }, {
+                name: "Achija",
+                Address: "Near Santoshi Mata Mandir",
+                City: "Kochi"
+            }, {
+                name: "Cream Centre",
+                Address: "LalBahadur Shastri Marg",
+                City: "Bangalore"
+            }, {
+                name: "The Laughter Chapter",
+                Address: "Sarojini Naidu Road E, Shanti Bhuvan",
+                City: "Mumbai"
+            }];
+
+            printAllRestaurantNames() {
+                const length = this.restaurantList.length;
+                for (let i = 0; i < length; i++) {
+                    const name = this.restaurantList[i].name;
+                    console.log(name);
+                }
+            }
+            filterRestaurantByCity(City) {
+                function filterCity(restaurant) {
+                    return restaurant.City == City;
+                }
+                var result = this.restaurantList.filter(filterCity);
+                console.log(result);
+                return result;
+            }
+        }
+        var obj = new Restaurant_Manager();
+        obj.printAllRestaurantNames();
+        obj.filterRestaurantByCity("Mumbai")
+    </script>
+</body>
+
+</html>
